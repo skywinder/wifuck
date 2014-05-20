@@ -173,7 +173,7 @@ void sha1(const char* str)
     for (int yearIndex = 0; yearIndex < 8; yearIndex++)
     {
         int year = yearList[yearIndex];
-        for (id w in weekList) // 1..52
+        for (NSNumber *w in weekList) // 1..52
         {
             NSMutableArray* parameterArray = [[NSMutableArray alloc] init];
             [self performSelectorOnMainThread:@selector(isStopRequested:) withObject:parameterArray waitUntilDone:YES];
@@ -183,7 +183,7 @@ void sha1(const char* str)
                 if (result)
                 {
                     int week = [w intValue];
-                    NSString* logStr = [NSString stringWithFormat:@"Trying year 20%02d week %d", (int)year, week];
+                    NSString* logStr = [NSString stringWithFormat:@"Trying year 20%02d week %d", year, week];
                     NSLog(@"%@", logStr);
                     [self logTextFromBackground:logStr];
                     
@@ -213,7 +213,7 @@ void sha1(const char* str)
                                 
                                 sha1(buff);
                                 
-                                bool isEqual = YES;
+                                BOOL isEqual = YES;
                                 int index = 0;
                                 while (ssid[index] != '\0')
                                 {
@@ -245,6 +245,7 @@ void sha1(const char* str)
                     return;
                 }
             }
+            [parameterArray release];
         }
     }
     
@@ -259,6 +260,7 @@ void sha1(const char* str)
         [self logTextFromBackground:str];
     }
     isAnalyzing = 0;
+    [weekList release];
 }
 
 - (void)finished
