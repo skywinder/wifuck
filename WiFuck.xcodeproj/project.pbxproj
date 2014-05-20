@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1CBBCE316D57D6300A0E31A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE216D57D6300A0E31A /* UIKit.framework */; };
+		E1CBBCE516D57D6300A0E31A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE416D57D6300A0E31A /* Foundation.framework */; };
+		E1CBBCE716D57D6300A0E31A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE616D57D6300A0E31A /* CoreGraphics.framework */; };
+		E1CBBCED16D57D6300A0E31A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBCEB16D57D6300A0E31A /* InfoPlist.strings */; };
+		E1CBBCEF16D57D6300A0E31A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CBBCEE16D57D6300A0E31A /* main.m */; };
+		E1CBBCF316D57D6300A0E31A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CBBCF216D57D6300A0E31A /* AppDelegate.m */; };
+		E1CBBCF516D57D6300A0E31A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBCF416D57D6300A0E31A /* Default.png */; };
+		E1CBBCF716D57D6300A0E31A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBCF616D57D6300A0E31A /* Default@2x.png */; };
+		E1CBBCF916D57D6300A0E31A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBCF816D57D6300A0E31A /* Default-568h@2x.png */; };
+		E1CBBCFC16D57D6300A0E31A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CBBCFB16D57D6300A0E31A /* ViewController.m */; };
+		E1CBBCFF16D57D6300A0E31A /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBCFD16D57D6300A0E31A /* ViewController_iPhone.xib */; };
+		E1CBBD0216D57D6300A0E31A /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBD0016D57D6300A0E31A /* ViewController_iPad.xib */; };
+		E1D49E7E170D98B400F99869 /* orangeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E7A170D98B400F99869 /* orangeButton.png */; };
+		E1D49E7F170D98B400F99869 /* orangeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E7B170D98B400F99869 /* orangeButton@2x.png */; };
+		E1D49E80170D98B400F99869 /* orangeButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E7C170D98B400F99869 /* orangeButtonHighlight.png */; };
+		E1D49E81170D98B400F99869 /* orangeButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E7D170D98B400F99869 /* orangeButtonHighlight@2x.png */; };
+		E1D49E87170DD3D700F99869 /* wireless-114.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E86170DD3D700F99869 /* wireless-114.png */; };
+		E1D49E89170DD44000F99869 /* wireless-144.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E88170DD44000F99869 /* wireless-144.png */; };
+		E1D49E8B170DD49E00F99869 /* wireless-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E8A170DD49E00F99869 /* wireless-72.png */; };
+		E1D49E8D170DD4BC00F99869 /* wireless-57.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E8C170DD4BC00F99869 /* wireless-57.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E1CBBCDF16D57D6300A0E31A /* WiFuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1CBBCE216D57D6300A0E31A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E1CBBCE416D57D6300A0E31A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E1CBBCE616D57D6300A0E31A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E1CBBCEA16D57D6300A0E31A /* WiFuck-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WiFuck-Info.plist"; sourceTree = "<group>"; };
+		E1CBBCEC16D57D6300A0E31A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E1CBBCEE16D57D6300A0E31A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E1CBBCF016D57D6300A0E31A /* WiFuck-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WiFuck-Prefix.pch"; sourceTree = "<group>"; };
+		E1CBBCF116D57D6300A0E31A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E1CBBCF216D57D6300A0E31A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E1CBBCF416D57D6300A0E31A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E1CBBCF616D57D6300A0E31A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E1CBBCF816D57D6300A0E31A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E1CBBCFA16D57D6300A0E31A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E1CBBCFB16D57D6300A0E31A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E1CBBCFE16D57D6300A0E31A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
+		E1CBBD0116D57D6300A0E31A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		E1D49E7A170D98B400F99869 /* orangeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButton.png; sourceTree = "<group>"; };
+		E1D49E7B170D98B400F99869 /* orangeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButton@2x.png"; sourceTree = "<group>"; };
+		E1D49E7C170D98B400F99869 /* orangeButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButtonHighlight.png; sourceTree = "<group>"; };
+		E1D49E7D170D98B400F99869 /* orangeButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButtonHighlight@2x.png"; sourceTree = "<group>"; };
+		E1D49E86170DD3D700F99869 /* wireless-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wireless-114.png"; sourceTree = "<group>"; };
+		E1D49E88170DD44000F99869 /* wireless-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wireless-144.png"; sourceTree = "<group>"; };
+		E1D49E8A170DD49E00F99869 /* wireless-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wireless-72.png"; sourceTree = "<group>"; };
+		E1D49E8C170DD4BC00F99869 /* wireless-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wireless-57.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E1CBBCDC16D57D6300A0E31A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CBBCE316D57D6300A0E31A /* UIKit.framework in Frameworks */,
+				E1CBBCE516D57D6300A0E31A /* Foundation.framework in Frameworks */,
+				E1CBBCE716D57D6300A0E31A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E1CBBCD616D57D6300A0E31A = {
+			isa = PBXGroup;
+			children = (
+				E1D49E8C170DD4BC00F99869 /* wireless-57.png */,
+				E1D49E8A170DD49E00F99869 /* wireless-72.png */,
+				E1D49E88170DD44000F99869 /* wireless-144.png */,
+				E1D49E86170DD3D700F99869 /* wireless-114.png */,
+				E1CBBCE816D57D6300A0E31A /* WiFuck */,
+				E1CBBCE116D57D6300A0E31A /* Frameworks */,
+				E1CBBCE016D57D6300A0E31A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E1CBBCE016D57D6300A0E31A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1CBBCDF16D57D6300A0E31A /* WiFuck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1CBBCE116D57D6300A0E31A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1CBBCE216D57D6300A0E31A /* UIKit.framework */,
+				E1CBBCE416D57D6300A0E31A /* Foundation.framework */,
+				E1CBBCE616D57D6300A0E31A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1CBBCE816D57D6300A0E31A /* WiFuck */ = {
+			isa = PBXGroup;
+			children = (
+				E1D49E7A170D98B400F99869 /* orangeButton.png */,
+				E1D49E7B170D98B400F99869 /* orangeButton@2x.png */,
+				E1D49E7C170D98B400F99869 /* orangeButtonHighlight.png */,
+				E1D49E7D170D98B400F99869 /* orangeButtonHighlight@2x.png */,
+				E1CBBCF116D57D6300A0E31A /* AppDelegate.h */,
+				E1CBBCF216D57D6300A0E31A /* AppDelegate.m */,
+				E1CBBCFA16D57D6300A0E31A /* ViewController.h */,
+				E1CBBCFB16D57D6300A0E31A /* ViewController.m */,
+				E1CBBCFD16D57D6300A0E31A /* ViewController_iPhone.xib */,
+				E1CBBD0016D57D6300A0E31A /* ViewController_iPad.xib */,
+				E1CBBCE916D57D6300A0E31A /* Supporting Files */,
+			);
+			path = WiFuck;
+			sourceTree = "<group>";
+		};
+		E1CBBCE916D57D6300A0E31A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E1CBBCEA16D57D6300A0E31A /* WiFuck-Info.plist */,
+				E1CBBCEB16D57D6300A0E31A /* InfoPlist.strings */,
+				E1CBBCEE16D57D6300A0E31A /* main.m */,
+				E1CBBCF016D57D6300A0E31A /* WiFuck-Prefix.pch */,
+				E1CBBCF416D57D6300A0E31A /* Default.png */,
+				E1CBBCF616D57D6300A0E31A /* Default@2x.png */,
+				E1CBBCF816D57D6300A0E31A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E1CBBCDE16D57D6300A0E31A /* WiFuck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1CBBD0516D57D6300A0E31A /* Build configuration list for PBXNativeTarget "WiFuck" */;
+			buildPhases = (
+				E1CBBCDB16D57D6300A0E31A /* Sources */,
+				E1CBBCDC16D57D6300A0E31A /* Frameworks */,
+				E1CBBCDD16D57D6300A0E31A /* Resources */,
+				50524F424C454D533F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WiFuck;
+			productName = WiFuck;
+			productReference = E1CBBCDF16D57D6300A0E31A /* WiFuck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E1CBBCD716D57D6300A0E31A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Maxim Grati";
+			};
+			buildConfigurationList = E1CBBCDA16D57D6300A0E31A /* Build configuration list for PBXProject "WiFuck" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E1CBBCD616D57D6300A0E31A;
+			productRefGroup = E1CBBCE016D57D6300A0E31A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E1CBBCDE16D57D6300A0E31A /* WiFuck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E1CBBCDD16D57D6300A0E31A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CBBCED16D57D6300A0E31A /* InfoPlist.strings in Resources */,
+				E1CBBCF516D57D6300A0E31A /* Default.png in Resources */,
+				E1CBBCF716D57D6300A0E31A /* Default@2x.png in Resources */,
+				E1CBBCF916D57D6300A0E31A /* Default-568h@2x.png in Resources */,
+				E1CBBCFF16D57D6300A0E31A /* ViewController_iPhone.xib in Resources */,
+				E1CBBD0216D57D6300A0E31A /* ViewController_iPad.xib in Resources */,
+				E1D49E7E170D98B400F99869 /* orangeButton.png in Resources */,
+				E1D49E7F170D98B400F99869 /* orangeButton@2x.png in Resources */,
+				E1D49E80170D98B400F99869 /* orangeButtonHighlight.png in Resources */,
+				E1D49E81170D98B400F99869 /* orangeButtonHighlight@2x.png in Resources */,
+				E1D49E87170DD3D700F99869 /* wireless-114.png in Resources */,
+				E1D49E89170DD44000F99869 /* wireless-144.png in Resources */,
+				E1D49E8B170DD49E00F99869 /* wireless-72.png in Resources */,
+				E1D49E8D170DD4BC00F99869 /* wireless-57.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+
+/* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+
+/* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E1CBBCDB16D57D6300A0E31A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CBBCEF16D57D6300A0E31A /* main.m in Sources */,
+				E1CBBCF316D57D6300A0E31A /* AppDelegate.m in Sources */,
+				E1CBBCFC16D57D6300A0E31A /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E1CBBCEB16D57D6300A0E31A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1CBBCEC16D57D6300A0E31A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E1CBBCFD16D57D6300A0E31A /* ViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1CBBCFE16D57D6300A0E31A /* en */,
+			);
+			name = ViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		E1CBBD0016D57D6300A0E31A /* ViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E1CBBD0116D57D6300A0E31A /* en */,
+			);
+			name = ViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E1CBBD0316D57D6300A0E31A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1CBBD0416D57D6300A0E31A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E1CBBD0616D57D6300A0E31A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WiFuck/WiFuck-Prefix.pch";
+				INFOPLIST_FILE = "WiFuck/WiFuck-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E1CBBD0716D57D6300A0E31A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WiFuck/WiFuck-Prefix.pch";
+				INFOPLIST_FILE = "WiFuck/WiFuck-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E1CBBCDA16D57D6300A0E31A /* Build configuration list for PBXProject "WiFuck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CBBD0316D57D6300A0E31A /* Debug */,
+				E1CBBD0416D57D6300A0E31A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E1CBBD0516D57D6300A0E31A /* Build configuration list for PBXNativeTarget "WiFuck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E1CBBD0616D57D6300A0E31A /* Debug */,
+				E1CBBD0716D57D6300A0E31A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E1CBBCD716D57D6300A0E31A /* Project object */;
+}
