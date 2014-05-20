@@ -229,9 +229,9 @@ void sha1(const char* str)
                                     shaResult[10] = '\0';
                                     NSString *resStr = [NSString stringWithCString:shaResult encoding:NSASCIIStringEncoding];
                                     
-                                    NSString* logStr = [NSString stringWithFormat:@"Found: %@", resStr];
-                                    NSLog(@"%@", logStr);
-                                    [self logTextFromBackground:logStr];
+                                    NSString* subLogStr = [NSString stringWithFormat:@"Found: %@", resStr];
+                                    NSLog(@"%@", subLogStr);
+                                    [self logTextFromBackground:subLogStr];
                                     [resultArray addObject:resStr];
                                     
                                     count += 1;

@@ -8,7 +8,6 @@
 
 @interface ViewController : UIViewController
 {
-    int foundCount;
     int isAnalyzing;
     NSMutableArray* resultArray;
     NSMutableString* logString;
