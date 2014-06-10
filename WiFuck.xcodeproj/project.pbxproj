@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CCCF03119475E0F004758BF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CCCF03019475E0E004758BF /* Storyboard.storyboard */; };
 		E1CBBCE316D57D6300A0E31A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE216D57D6300A0E31A /* UIKit.framework */; };
 		E1CBBCE516D57D6300A0E31A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE416D57D6300A0E31A /* Foundation.framework */; };
 		E1CBBCE716D57D6300A0E31A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE616D57D6300A0E31A /* CoreGraphics.framework */; };
@@ -17,8 +18,6 @@
 		E1CBBCF716D57D6300A0E31A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBCF616D57D6300A0E31A /* Default@2x.png */; };
 		E1CBBCF916D57D6300A0E31A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBCF816D57D6300A0E31A /* Default-568h@2x.png */; };
 		E1CBBCFC16D57D6300A0E31A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CBBCFB16D57D6300A0E31A /* ViewController.m */; };
-		E1CBBCFF16D57D6300A0E31A /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBCFD16D57D6300A0E31A /* ViewController_iPhone.xib */; };
-		E1CBBD0216D57D6300A0E31A /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1CBBD0016D57D6300A0E31A /* ViewController_iPad.xib */; };
 		E1D49E7E170D98B400F99869 /* orangeButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E7A170D98B400F99869 /* orangeButton.png */; };
 		E1D49E7F170D98B400F99869 /* orangeButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E7B170D98B400F99869 /* orangeButton@2x.png */; };
 		E1D49E80170D98B400F99869 /* orangeButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = E1D49E7C170D98B400F99869 /* orangeButtonHighlight.png */; };
@@ -30,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CCCF03019475E0E004758BF /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		E1CBBCDF16D57D6300A0E31A /* WiFuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CBBCE216D57D6300A0E31A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1CBBCE416D57D6300A0E31A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -45,8 +45,6 @@
 		E1CBBCF816D57D6300A0E31A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E1CBBCFA16D57D6300A0E31A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E1CBBCFB16D57D6300A0E31A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E1CBBCFE16D57D6300A0E31A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
-		E1CBBD0116D57D6300A0E31A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		E1D49E7A170D98B400F99869 /* orangeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButton.png; sourceTree = "<group>"; };
 		E1D49E7B170D98B400F99869 /* orangeButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeButton@2x.png"; sourceTree = "<group>"; };
 		E1D49E7C170D98B400F99869 /* orangeButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeButtonHighlight.png; sourceTree = "<group>"; };
@@ -74,6 +72,7 @@
 		E1CBBCD616D57D6300A0E31A = {
 			isa = PBXGroup;
 			children = (
+				1CCCF03019475E0E004758BF /* Storyboard.storyboard */,
 				E1D49E8C170DD4BC00F99869 /* wireless-57.png */,
 				E1D49E8A170DD49E00F99869 /* wireless-72.png */,
 				E1D49E88170DD44000F99869 /* wireless-144.png */,
@@ -113,8 +112,6 @@
 				E1CBBCF216D57D6300A0E31A /* AppDelegate.m */,
 				E1CBBCFA16D57D6300A0E31A /* ViewController.h */,
 				E1CBBCFB16D57D6300A0E31A /* ViewController.m */,
-				E1CBBCFD16D57D6300A0E31A /* ViewController_iPhone.xib */,
-				E1CBBD0016D57D6300A0E31A /* ViewController_iPad.xib */,
 				E1CBBCE916D57D6300A0E31A /* Supporting Files */,
 			);
 			path = WiFuck;
@@ -163,6 +160,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Maxim Grati";
+				TargetAttributes = {
+					E1CBBCDE16D57D6300A0E31A = {
+						DevelopmentTeam = 5UH69GW6GE;
+					};
+				};
 			};
 			buildConfigurationList = E1CBBCDA16D57D6300A0E31A /* Build configuration list for PBXProject "WiFuck" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -190,8 +192,6 @@
 				E1CBBCF516D57D6300A0E31A /* Default.png in Resources */,
 				E1CBBCF716D57D6300A0E31A /* Default@2x.png in Resources */,
 				E1CBBCF916D57D6300A0E31A /* Default-568h@2x.png in Resources */,
-				E1CBBCFF16D57D6300A0E31A /* ViewController_iPhone.xib in Resources */,
-				E1CBBD0216D57D6300A0E31A /* ViewController_iPad.xib in Resources */,
 				E1D49E7E170D98B400F99869 /* orangeButton.png in Resources */,
 				E1D49E7F170D98B400F99869 /* orangeButton@2x.png in Resources */,
 				E1D49E80170D98B400F99869 /* orangeButtonHighlight.png in Resources */,
@@ -200,6 +200,7 @@
 				E1D49E89170DD44000F99869 /* wireless-144.png in Resources */,
 				E1D49E8B170DD49E00F99869 /* wireless-72.png in Resources */,
 				E1D49E8D170DD4BC00F99869 /* wireless-57.png in Resources */,
+				1CCCF03119475E0F004758BF /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,22 +244,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		E1CBBCFD16D57D6300A0E31A /* ViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E1CBBCFE16D57D6300A0E31A /* en */,
-			);
-			name = ViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		E1CBBD0016D57D6300A0E31A /* ViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E1CBBD0116D57D6300A0E31A /* en */,
-			);
-			name = ViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -273,7 +258,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -304,7 +290,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -321,10 +308,14 @@
 		E1CBBD0616D57D6300A0E31A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WiFuck/WiFuck-Prefix.pch";
 				INFOPLIST_FILE = "WiFuck/WiFuck-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -332,10 +323,14 @@
 		E1CBBD0716D57D6300A0E31A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WiFuck/WiFuck-Prefix.pch";
 				INFOPLIST_FILE = "WiFuck/WiFuck-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
