@@ -105,9 +105,9 @@ void sha1(const char* str)
     [logString appendFormat:@"%@\r\n", text];
     [textView setText:logString];
 
-    //NSRange myRange=NSMakeRange(textView.text.length, 0);
+    NSRange myRange=NSMakeRange(textView.text.length, 0);
     
-    //[textView scrollRangeToVisible:myRange];
+    [textView scrollRangeToVisible:myRange];
 }
 
 -(void)logTextFromBackground:(NSString*)text
@@ -184,8 +184,8 @@ void sha1(const char* str)
                 {
                     int week = [w intValue];
                     NSString* logStr = [NSString stringWithFormat:@"Trying year 20%02d week %d", year, week];
-                    NSLog(@"%@", logStr);
-                    [self logTextFromBackground:logStr];
+//                    NSLog(@"%@", logStr);
+//                    [self logTextFromBackground:logStr];
                     
                     for (int char1 = 0; char1 < 36; char1++)
                     {
