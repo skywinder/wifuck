@@ -24,17 +24,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"
+                                                            forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"Str %d", indexPath.row];
+    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [super tableView:tableView numberOfRowsInSection:section];
+    return 10;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    [self.delegate networkSelected:[NSString stringWithFormat:@"net %d", indexPath.row]];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

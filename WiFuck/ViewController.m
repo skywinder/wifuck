@@ -307,4 +307,8 @@ void sha1(const char* str)
     }
 }
 
+- (void)networkSelected:(NSString *)string
+{
+    self.ssidText.text = string;
+}
 @end

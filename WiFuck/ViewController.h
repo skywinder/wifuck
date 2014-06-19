@@ -22,4 +22,5 @@
 - (void)logTextFromBackground:(NSString*)text;
 - (void)isStopRequested:(NSMutableArray *)parameterArray;
 
+- (void)networkSelected:(NSString *)string;
 @end
