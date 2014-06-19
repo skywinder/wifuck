@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1CCCF03119475E0F004758BF /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CCCF03019475E0E004758BF /* Storyboard.storyboard */; };
+		D66F5AD10B65B8A3ABDCD533 /* NetworkChooserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D66F538242E40212D54CA871 /* NetworkChooserTableViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		E1CBBCE316D57D6300A0E31A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE216D57D6300A0E31A /* UIKit.framework */; };
 		E1CBBCE516D57D6300A0E31A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE416D57D6300A0E31A /* Foundation.framework */; };
 		E1CBBCE716D57D6300A0E31A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1CBBCE616D57D6300A0E31A /* CoreGraphics.framework */; };
@@ -30,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		1CCCF03019475E0E004758BF /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		D66F538242E40212D54CA871 /* NetworkChooserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkChooserTableViewController.m; sourceTree = "<group>"; };
+		D66F5A4D2839B86530558B29 /* NetworkChooserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkChooserTableViewController.h; sourceTree = "<group>"; };
 		E1CBBCDF16D57D6300A0E31A /* WiFuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiFuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1CBBCE216D57D6300A0E31A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E1CBBCE416D57D6300A0E31A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +116,8 @@
 				E1CBBCFA16D57D6300A0E31A /* ViewController.h */,
 				E1CBBCFB16D57D6300A0E31A /* ViewController.m */,
 				E1CBBCE916D57D6300A0E31A /* Supporting Files */,
+				D66F5A4D2839B86530558B29 /* NetworkChooserTableViewController.h */,
+				D66F538242E40212D54CA871 /* NetworkChooserTableViewController.m */,
 			);
 			path = WiFuck;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				E1CBBCEF16D57D6300A0E31A /* main.m in Sources */,
 				E1CBBCF316D57D6300A0E31A /* AppDelegate.m in Sources */,
 				E1CBBCFC16D57D6300A0E31A /* ViewController.m in Sources */,
+				D66F5AD10B65B8A3ABDCD533 /* NetworkChooserTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

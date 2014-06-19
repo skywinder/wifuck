@@ -5,6 +5,7 @@
 //
 
 #import "ViewController.h"
+#import "NetworkChooserTableViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @interface ViewController ()
@@ -53,24 +54,34 @@ void intToHex(int num)
     hexResult[1] = hex2asciiArr[num][1];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
+
+    [self setupImgeForButton];
+
+    isAnalyzing = 0;
+    logString = [[NSMutableString alloc] init];
+    resultArray = [[NSMutableArray alloc] init];
+
+}
+
+- (void)setupImgeForButton
+{
     UIImage *buttonImage = [[UIImage imageNamed:@"orangeButton.png"]
                             resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     UIImage *buttonImageHighlight = [[UIImage imageNamed:@"orangeButtonHighlight.png"]
                                      resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
     // Set the background for any states you plan to use
-    [button setBackgroundImage:buttonImage forState:UIControlStateNormal]
-    ;
+    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
     [button setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
-    
-    isAnalyzing = 0;
-    logString = [[NSMutableString alloc] init];
-    resultArray = [[NSMutableArray alloc] init];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -288,4 +299,12 @@ void sha1(const char* str)
     [resultArray release];
     [super dealloc];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"SelectNetwork"]) {
+        NetworkChooserTableViewController *vc = segue.destinationViewController;
+        vc.delegate = self;
+    }
+}
+
 @end
