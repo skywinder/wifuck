@@ -81,8 +81,8 @@ void intToHex(int num)
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    
     [ssidText resignFirstResponder];
+    [self analyzePressed:nil];
     return YES;
 }
 
@@ -150,6 +150,15 @@ void sha1(const char* str)
     }
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (range.location <= 5 || [string isEqualToString:@""])
+        return YES;
+
+    [self logText:@"Invalid SSID ending. 6 characters expected!"];
+    return NO;
+}
+
 - (void)analyze
 {
     //fe8e1d
@@ -173,6 +182,10 @@ void sha1(const char* str)
     for (int yearIndex = 0; yearIndex < 8; yearIndex++)
     {
         int year = yearList[yearIndex];
+
+        NSString* logStr = [NSString stringWithFormat:@"Trying year 20%02d", year];
+        [self logTextFromBackground:logStr];
+
         for (NSNumber *w in weekList) // 1..52
         {
             NSMutableArray* parameterArray = [[NSMutableArray alloc] init];
@@ -183,10 +196,7 @@ void sha1(const char* str)
                 if (result)
                 {
                     int week = [w intValue];
-                    NSString* logStr = [NSString stringWithFormat:@"Trying year 20%02d week %d", year, week];
-//                    NSLog(@"%@", logStr);
-//                    [self logTextFromBackground:logStr];
-                    
+
                     for (int char1 = 0; char1 < 36; char1++)
                     {
                         for (int char2 = 0; char2 < 36; char2++)

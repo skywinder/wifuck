@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
 {
     int isAnalyzing;
     NSMutableArray* resultArray;
