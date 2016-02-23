@@ -164,11 +164,6 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Maxim Grati";
-				TargetAttributes = {
-					E1CBBCDE16D57D6300A0E31A = {
-						DevelopmentTeam = 5UH69GW6GE;
-					};
-				};
 			};
 			buildConfigurationList = E1CBBCDA16D57D6300A0E31A /* Build configuration list for PBXProject "WiFuck" */;
 			compatibilityVersion = "Xcode 3.2";
