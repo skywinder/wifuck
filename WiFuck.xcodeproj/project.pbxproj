@@ -162,7 +162,7 @@
 		E1CBBCD716D57D6300A0E31A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Maxim Grati";
 			};
 			buildConfigurationList = E1CBBCDA16D57D6300A0E31A /* Build configuration list for PBXProject "WiFuck" */;
@@ -245,6 +245,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -298,6 +299,7 @@
 				GCC_PREFIX_HEADER = "WiFuck/WiFuck-Prefix.pch";
 				INFOPLIST_FILE = "WiFuck/WiFuck-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "indie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -313,6 +315,7 @@
 				GCC_PREFIX_HEADER = "WiFuck/WiFuck-Prefix.pch";
 				INFOPLIST_FILE = "WiFuck/WiFuck-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "indie.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
