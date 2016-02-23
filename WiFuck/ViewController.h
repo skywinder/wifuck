@@ -13,9 +13,9 @@
     NSMutableString* logString;
 }
 
-@property (retain, nonatomic) IBOutlet UITextField *ssidText;
-@property (retain, nonatomic) IBOutlet UITextView *textView;
-@property (retain, nonatomic) IBOutlet UIButton *button;
+@property (strong, nonatomic) IBOutlet UITextField *ssidText;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) IBOutlet UIButton *button;
 
 - (IBAction)analyzePressed:(id)sender;
 - (void)logText:(NSString*)text;

@@ -181,7 +181,7 @@ void sha1(const char* str)
     
     int yearList[8] = { 5,6,7,8,9,10,11,12 };
     
-    NSMutableArray *weekList = [[NSMutableArray array] retain];
+    NSMutableArray *weekList = [NSMutableArray array];
     for(int i=1; i < 53; i++)
     {
         [weekList addObject:@(i)];
@@ -266,7 +266,6 @@ void sha1(const char* str)
                     return;
                 }
             }
-            [parameterArray release];
         }
     }
     
@@ -281,7 +280,6 @@ void sha1(const char* str)
         [self logTextFromBackground:str];
     }
     isAnalyzing = 0;
-    [weekList release];
 }
 
 - (void)finished
@@ -291,14 +289,6 @@ void sha1(const char* str)
     [button setTitle:@"Bruteforce" forState:UIControlStateNormal];
 }
 
-- (void)dealloc {
-    [textView release];
-    [button release];
-    [ssidText release];
-    [logString release];
-    [resultArray release];
-    [super dealloc];
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"SelectNetwork"]) {
