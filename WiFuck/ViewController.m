@@ -101,7 +101,7 @@ void sha1(const char* str)
 {
     unsigned char result[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1(str, strlen(str), result);
-    
+
     for (int i = 0; i < 20; i++)
     {
         intToHex(result[i]);
@@ -117,7 +117,7 @@ void sha1(const char* str)
     [textView setText:logString];
 
     NSRange myRange=NSMakeRange(textView.text.length, 0);
-    
+
     [textView scrollRangeToVisible:myRange];
 }
 
@@ -148,7 +148,7 @@ void sha1(const char* str)
             [self logText:@"Invalid SSID ending. 6 characters expected!"];
             return;
         }
-        
+
         isAnalyzing = 1;
         [sender setTitle:@"Stop" forState:UIControlStateNormal];
         [self logText:[NSString stringWithFormat:@"Running bruteforce analyzer for SSID ending %@...", ssidText.text.uppercaseString]];
@@ -176,20 +176,20 @@ void sha1(const char* str)
     NSString* ssid_end = ssidText.text;
     unsigned long offset = 40 - (ssid_end.length);
     const char* ssid = ssid_end.uppercaseString.UTF8String;
-    
+
     [resultArray removeAllObjects];
-    
+
     int yearList[8] = { 5,6,7,8,9,10,11,12 };
-    
+
     NSMutableArray *weekList = [NSMutableArray array];
     for(int i=1; i < 53; i++)
     {
         [weekList addObject:@(i)];
     }
-    
+
     NSLog(@"Possible keys for SSID ending %@:", ssid_end.uppercaseString);
     unsigned int count = 0;
-    
+
     for (int yearIndex = 0; yearIndex < 8; yearIndex++)
     {
         int year = yearList[yearIndex];
@@ -231,9 +231,9 @@ void sha1(const char* str)
                                 buff[10] = hexResult[0];
                                 buff[11] = hexResult[1];
                                 buff[12] = '\0';
-                                
+
                                 sha1(buff);
-                                
+
                                 BOOL isEqual = YES;
                                 int index = 0;
                                 while (ssid[index] != '\0')
@@ -244,17 +244,17 @@ void sha1(const char* str)
                                     }
                                     index++;
                                 }
-                                
+
                                 if (isEqual)
                                 {
                                     shaResult[10] = '\0';
                                     NSString *resStr = [NSString stringWithCString:shaResult encoding:NSASCIIStringEncoding];
-                                    
+
                                     NSString* subLogStr = [NSString stringWithFormat:@"Found: %@", resStr];
                                     NSLog(@"%@", subLogStr);
                                     [self logTextFromBackground:subLogStr];
                                     [resultArray addObject:resStr];
-                                    
+
                                     count += 1;
                                 }
                             }
@@ -268,18 +268,20 @@ void sha1(const char* str)
             }
         }
     }
-    
-    
-    
+
+
+
     NSString* logStr = [NSString stringWithFormat:@"%d possible key(s) found:", count];
     NSLog(@"%@", logStr);
     [self logTextFromBackground:logStr];
-    
+
     for (NSString* str in resultArray)
     {
         [self logTextFromBackground:str];
     }
     isAnalyzing = 0;
+    [self performSegueWithIdentifier:@"SelectNetwork" sender:self];
+
 }
 
 - (void)finished
