@@ -43,7 +43,7 @@
                                 </connections>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8P-Ju-FiC">
-                                <rect key="frame" x="20" y="20" width="144" height="30"/>
+                                <rect key="frame" x="20" y="20" width="136" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Oyv-x3-HQT"/>
                                 </constraints>
@@ -53,11 +53,8 @@
                                     <outlet property="delegate" destination="cpR-xr-2X1" id="sJR-YA-CMP"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-O8-5pH">
-                                <rect key="frame" x="172" y="20" width="128" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="hgk-Jj-bJP"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-O8-5pH">
+                                <rect key="frame" x="164" y="20" width="136" height="30"/>
                                 <state key="normal" title="Choose a Network">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -81,6 +78,7 @@
                             <constraint firstAttribute="trailing" secondItem="uSL-HP-avx" secondAttribute="trailing" constant="20" id="kC5-RL-9fC"/>
                             <constraint firstItem="uSL-HP-avx" firstAttribute="leading" secondItem="7d8-tc-TpJ" secondAttribute="leading" constant="20" id="kCG-UC-zdi"/>
                             <constraint firstItem="zlz-O8-5pH" firstAttribute="centerY" secondItem="I8P-Ju-FiC" secondAttribute="centerY" id="lAu-GO-FJA"/>
+                            <constraint firstItem="zlz-O8-5pH" firstAttribute="width" secondItem="I8P-Ju-FiC" secondAttribute="width" id="yuN-dR-2On"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9hG-lP-6P4"/>

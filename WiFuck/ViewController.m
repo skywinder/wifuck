@@ -69,7 +69,7 @@ void intToHex(int num)
 
     isAnalyzing = 0;
     logString = [[NSMutableString alloc] init];
-    resultArray = [[NSMutableArray alloc] init];
+    self.resultArray = [[NSMutableArray alloc] init];
 
 }
 
@@ -177,7 +177,7 @@ void sha1(const char* str)
     unsigned long offset = 40 - (ssid_end.length);
     const char* ssid = ssid_end.uppercaseString.UTF8String;
 
-    [resultArray removeAllObjects];
+    [self.resultArray removeAllObjects];
 
     int yearList[8] = { 5,6,7,8,9,10,11,12 };
 
@@ -253,7 +253,7 @@ void sha1(const char* str)
                                     NSString* subLogStr = [NSString stringWithFormat:@"Found: %@", resStr];
                                     NSLog(@"%@", subLogStr);
                                     [self logTextFromBackground:subLogStr];
-                                    [resultArray addObject:resStr];
+                                    [self.resultArray addObject:resStr];
 
                                     count += 1;
                                 }
@@ -275,12 +275,15 @@ void sha1(const char* str)
     NSLog(@"%@", logStr);
     [self logTextFromBackground:logStr];
 
-    for (NSString* str in resultArray)
+    for (NSString* str in self.resultArray)
     {
         [self logTextFromBackground:str];
     }
     isAnalyzing = 0;
-    [self performSegueWithIdentifier:@"SelectNetwork" sender:self];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"SelectNetwork" sender:self];
+    });
+
 
 }
 
@@ -295,6 +298,7 @@ void sha1(const char* str)
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"SelectNetwork"]) {
         NetworkChooserTableViewController *vc = segue.destinationViewController;
+        vc.resultArray = self.resultArray;
         vc.delegate = self;
     }
 }

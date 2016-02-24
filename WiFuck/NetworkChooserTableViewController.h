@@ -11,6 +11,7 @@
 @class ViewController;
 
 @interface NetworkChooserTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@property(nonatomic, strong) NSMutableArray *resultArray;
 
 @property(nonatomic, weak) ViewController *delegate;
 

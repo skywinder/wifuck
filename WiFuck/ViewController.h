@@ -9,13 +9,14 @@
 @interface ViewController : UIViewController <UITextFieldDelegate>
 {
     int isAnalyzing;
-    NSMutableArray* resultArray;
     NSMutableString* logString;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *ssidText;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UIButton *button;
+
+@property(atomic, strong) NSMutableArray *resultArray;
 
 - (IBAction)analyzePressed:(id)sender;
 - (void)logText:(NSString*)text;
