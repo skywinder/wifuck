@@ -8,7 +8,7 @@
 
 @interface ViewController : UIViewController <UITextFieldDelegate>
 {
-    int isAnalyzing;
+    BOOL isAnalyzing;
     NSMutableString* logString;
 }
 

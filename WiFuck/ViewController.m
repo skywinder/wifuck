@@ -67,7 +67,7 @@ void intToHex(int num)
 
     [self setupImgeForButton];
 
-    isAnalyzing = 0;
+    isAnalyzing = NO;
     logString = [[NSMutableString alloc] init];
     self.resultArray = [[NSMutableArray alloc] init];
 
@@ -123,21 +123,17 @@ void sha1(const char* str)
 
 -(void)logTextFromBackground:(NSString*)text
 {
-    [self performSelectorOnMainThread:@selector(logText:) withObject:text waitUntilDone:NO];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self logText:text];
+    });
 }
-
-- (void)isStopRequested:(NSMutableArray*) parameterArray
-{
-    [parameterArray addObject:[NSNumber numberWithInt: isAnalyzing]];
-}
-
 
 - (IBAction)analyzePressed:(id)sender
 {
     if (isAnalyzing)
     {
         [self logText:@"Stopping bruteforce process..."];
-        isAnalyzing = 0;
+        isAnalyzing = NO;
         [sender setEnabled:NO];
     }
     else
@@ -149,7 +145,7 @@ void sha1(const char* str)
             return;
         }
 
-        isAnalyzing = 1;
+        isAnalyzing = YES;
         [sender setTitle:@"Stop" forState:UIControlStateNormal];
         [self logText:[NSString stringWithFormat:@"Running bruteforce analyzer for SSID ending %@...", ssidText.text.uppercaseString]];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -199,77 +195,70 @@ void sha1(const char* str)
 
         for (NSNumber *w in weekList) // 1..52
         {
-            NSMutableArray* parameterArray = [[NSMutableArray alloc] init];
-            [self performSelectorOnMainThread:@selector(isStopRequested:) withObject:parameterArray waitUntilDone:YES];
-            if ([parameterArray count] == 1)
+            int result = [parameterArray[0] intValue];
+            if (result)
             {
-                int result = [[parameterArray objectAtIndex: 0] intValue];
-                if (result)
+                int week = [w intValue];
+
+                for (int char1 = 0; char1 < 36; char1++)
                 {
-                    int week = [w intValue];
-
-                    for (int char1 = 0; char1 < 36; char1++)
+                    for (int char2 = 0; char2 < 36; char2++)
                     {
-                        for (int char2 = 0; char2 < 36; char2++)
+                        for (int char3 = 0; char3 < 36; char3++)
                         {
-                            for (int char3 = 0; char3 < 36; char3++)
+                            char buff[14];
+                            buff[0] = 'C';
+                            buff[1] = 'P';
+                            buff[2] = digitToChar(year / 10);
+                            buff[3] = digitToChar(year % 10);
+                            buff[4] = digitToChar(week / 10);
+                            buff[5] = digitToChar(week % 10);
+                            intToHex(charset[char1]);
+                            buff[6] = hexResult[0];
+                            buff[7] = hexResult[1];
+                            intToHex(charset[char2]);
+                            buff[8] = hexResult[0];
+                            buff[9] = hexResult[1];
+                            intToHex(charset[char3]);
+                            buff[10] = hexResult[0];
+                            buff[11] = hexResult[1];
+                            buff[12] = '\0';
+
+                            sha1(buff);
+
+                            BOOL isEqual = YES;
+                            int index = 0;
+                            while (ssid[index] != '\0')
                             {
-                                char buff[14];
-                                buff[0] = 'C';
-                                buff[1] = 'P';
-                                buff[2] = digitToChar(year / 10);
-                                buff[3] = digitToChar(year % 10);
-                                buff[4] = digitToChar(week / 10);
-                                buff[5] = digitToChar(week % 10);
-                                intToHex(charset[char1]);
-                                buff[6] = hexResult[0];
-                                buff[7] = hexResult[1];
-                                intToHex(charset[char2]);
-                                buff[8] = hexResult[0];
-                                buff[9] = hexResult[1];
-                                intToHex(charset[char3]);
-                                buff[10] = hexResult[0];
-                                buff[11] = hexResult[1];
-                                buff[12] = '\0';
-
-                                sha1(buff);
-
-                                BOOL isEqual = YES;
-                                int index = 0;
-                                while (ssid[index] != '\0')
+                                if (ssid[index] != shaResult[offset + index])
                                 {
-                                    if (ssid[index] != shaResult[offset + index])
-                                    {
-                                        isEqual = NO;
-                                    }
-                                    index++;
+                                    isEqual = NO;
                                 }
+                                index++;
+                            }
 
-                                if (isEqual)
-                                {
-                                    shaResult[10] = '\0';
-                                    NSString *resStr = [NSString stringWithCString:shaResult encoding:NSASCIIStringEncoding];
+                            if (isEqual)
+                            {
+                                shaResult[10] = '\0';
+                                NSString *resStr = [NSString stringWithCString:shaResult encoding:NSASCIIStringEncoding];
 
-                                    NSString* subLogStr = [NSString stringWithFormat:@"Found: %@", resStr];
-                                    NSLog(@"%@", subLogStr);
-                                    [self logTextFromBackground:subLogStr];
-                                    [self.resultArray addObject:resStr];
+                                NSString* subLogStr = [NSString stringWithFormat:@"Found: %@", resStr];
+                                NSLog(@"%@", subLogStr);
+                                [self logTextFromBackground:subLogStr];
+                                [self.resultArray addObject:resStr];
 
-                                    count += 1;
-                                }
+                                count += 1;
                             }
                         }
                     }
                 }
-                else
-                {
-                    return;
-                }
+            }
+            else
+            {
+                return;
             }
         }
     }
-
-
 
     NSString* logStr = [NSString stringWithFormat:@"%d possible key(s) found:", count];
     NSLog(@"%@", logStr);
@@ -279,12 +268,7 @@ void sha1(const char* str)
     {
         [self logTextFromBackground:str];
     }
-    isAnalyzing = 0;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"SelectNetwork" sender:self];
-    });
-
-
+    isAnalyzing = NO;
 }
 
 - (void)finished
@@ -292,6 +276,9 @@ void sha1(const char* str)
     [self logText:@"Done."];
     [button setEnabled:YES];
     [button setTitle:@"Bruteforce" forState:UIControlStateNormal];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"SelectNetwork" sender:self];
+    });
 }
 
 
